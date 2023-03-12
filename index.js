@@ -19,7 +19,8 @@ module.exports = (() => {
         'fs',       'functions', 
         'http',     'math', 
         'number',   'object', 
-        'os',       'string' 
+        'os',       'string',
+        'html'
     ]
     let imports = {}
     for (let mod of CORE_MODULES) { 

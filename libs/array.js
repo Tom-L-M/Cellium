@@ -329,14 +329,14 @@ namespace.mapToFlags = (array, defaultValue) => array.reduce((acc, str) => ({...
  * @since 1.2.8
  * 
  * @param  {Number} len The length of the array to be created.
- * @param  {Function} func The function to apply to all items in the array.
+ * @param  {Function} func The function to apply to all items in the array. Or s static value to fill the array.
  * @return {Array} Returns an array, filled with the number of items selected and with the function applied.
  * 
  * @example <caption>  </caption>
  * filledList(10, Math.random);
  * // ~[0.21, 0.08, 0.40, 0.96, 0.96, 0.24, 0.19, 0.96, 0.42, 0.70]
 */
-namespace.filledList = (len, func) => Array.from({ length: len }, (_, i) => func(i));
+namespace.filledList = (len, func) => Array.from({ length: len }, (_, i) => (typeof func === 'function' ? func(i) : func));
 
 /**
  * Checks if there are duplicate values in a flat array.
